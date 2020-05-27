@@ -40,7 +40,7 @@ function loadedgelist(io::IO, gname::String)
     for (u, v) in zip(srcs, dsts)
         add_edge!(g, vxdict[u], vxdict[v])
     end
-    return g
+    return (g, vxdict)
 end
 
 function saveedgelist(io::IO, g::LightGraphs.AbstractGraph, gname::String)
